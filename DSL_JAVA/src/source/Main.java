@@ -19,17 +19,17 @@ public class Main {
 	        .grade("Étudiant");
 	    
 	
-	DepartementBuilder dscience = new DepartementBuilder("sciences");
+	DepartementBuilder dchimie = new DepartementBuilder("chimie");
 	
-	dscience.employe()
-				.nom("acer")
-				.prenom("laptop")
-				.adresse("uqam")
-				.grade("chef");
+	dchimie.employe()
+				.nom("Raouf")
+				.prenom("Yazid")
+				.adresse("Montréal")
+				.grade("Étudiant");
 	
 	
 	System.out.println(dinfo.getDepartement().toString());
-	//dscience.affichageDepartement();
+	
 		
 	}
 
