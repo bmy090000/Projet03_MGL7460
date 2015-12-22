@@ -1,4 +1,3 @@
-require 'minitest/autorun'
 class Employe
   
   def initialize(&block)
@@ -9,21 +8,28 @@ class Employe
 
   def nom(nom = nil)
     return @nom unless nom 
+
+
     @nom = nom
   end
   
   def prenom(prenom = nil)
     return @prenom unless prenom 
+
+
     @prenom = prenom
   end
   
   def adresse(adresse = nil)
     return @adresse unless adresse 
+
+
     @adresse = adresse
   end
   
   def grade(grade = nil)
     return @grade unless grade 
+
 	@grade = grade
   end
   
@@ -33,6 +39,13 @@ class Employe
 		
 end
   
+  def valid?
+		@nom && 
+		@prenom &&
+		@adresse && 
+		@grade
+end
+
 end
 
 class Departement
@@ -59,10 +72,18 @@ class Departement
 		
 end
 
+def valid?
+@nom &&
+!@employes.empty? &&
+@employes.all? { |emp| emp.valid? }
+
+end
+
+
 #la présentation de notre DSL.  
 #exemple d'un département composé de deux employes 
 
-dinfo = Departement.new("Informatique") do
+dinfo = Departement.new("informatique") do
   employe do
   
     nom 	"Boukhich"
